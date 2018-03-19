@@ -25,15 +25,11 @@ public class baseTools extends CordovaPlugin {
             return true;
         }
         if(action.equals("wakeup")){
-            boolean Switch = args.getBoolean(0);
+            int wakeTime = args.getInt(0);
             Context appCtx = cordova.getActivity().getApplicationContext();
             pm=(PowerManager) appCtx.getSystemService(Context.POWER_SERVICE);
             wl = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "bright");
-            if(Switch){
-                wl.acquire();
-            }else{
-                wl.release();
-            }
+            wl.acquire((long) wakeTime);
             return true;
         }
         return false;

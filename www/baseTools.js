@@ -7,7 +7,10 @@ ToolsFunc.prototype.exit = function() {
 }
 
 ToolsFunc.prototype.wakeUp = function(arg0, success, error) {
-    exec(success, error, "baseTools", "wakeup", arg0);
+    if (arg0 > 300000 || arg0 < 500) {
+        error("Invalid Values");
+    }
+    exec(success, error, "baseTools", "wakeup", [arg0]);
 }
 
 var TOOLFUNC = new ToolsFunc();
