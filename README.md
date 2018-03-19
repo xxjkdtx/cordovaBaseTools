@@ -11,4 +11,4 @@
 
 # 使用
 - cordova.plugins.baseTools.exit();  //退出
-- cordova.plugins.baseTools.wakeUp(time, success, error); //唤醒并保持time秒 ("500<time<300000")
+- cordova.plugins.baseTools.wakeUp(time, success, error); //唤醒并保持time毫秒 ("500<time<300000")
